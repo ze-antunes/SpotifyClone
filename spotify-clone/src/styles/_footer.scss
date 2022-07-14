@@ -1,0 +1,91 @@
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #141414;
+    color: white;
+    z-index: 10;
+
+    &-cover {
+        // border: 1px solid red;
+        display: flex;
+        width: 50%;
+        max-width: 50%;
+        height: 70px;
+        display: grid;
+        position: absolute;
+        top: 0;
+        left: 0;
+        grid-template-columns: 70px 130px;
+        grid-template-rows: 50% 50%;
+        grid-template-areas:
+        "left right-up"
+        "left right-down";
+        grid-gap: 10px;
+        grid-row-gap: 0;
+
+        &-image {
+            height: 70px;
+            width: 70px;
+            grid-area: left;
+
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &-info {
+            padding-top: 5px;
+        }
+
+        &-song {
+            grid-area: right-up;
+            height: 100%;
+            
+            h4 {
+                align-self: flex-end;
+            }
+          }
+
+        &-artist {
+            grid-area: right-down;
+            height: 100%;
+          }
+    }
+
+    &-controls {
+        height: 70px;
+        width: 70%;
+        display: flex;
+        float: right;
+        align-items: flex-start;
+    }
+
+    &-progress {
+        // border: 1px solid red;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 30px;
+
+        &-bar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 40%;
+            height: 5px;
+            background-color: #fff;
+            transition: height 0.5s ease-in-out;
+        }
+
+        &:hover {
+            .footer-progress-bar {
+                height: 15px;
+            }
+        }
+    }
+}

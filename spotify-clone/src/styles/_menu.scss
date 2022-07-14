@@ -1,0 +1,105 @@
+input#menu {
+    display: none;
+}
+
+.icon {
+    background: #1B1B1B;
+    cursor: pointer;
+    display: block;
+    height: 24px;
+    padding: 16px;
+    width: 24px;
+    position: fixed;
+    top: 75px;
+    z-index: 9;
+
+    & .menu,
+    .menu::before,
+    .menu::after {
+        background: #E4E4E4;
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        transition: background ease .3s, top ease .3s .3s, transform ease .3s;
+        width: 20px;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+
+.menu {
+    left: 18px;
+    top: 27px;
+
+    &::before {
+        top: -6px;
+    }
+
+    &::after {
+        top: 6px;
+    }
+}
+
+#menu:checked+.icon .menu {
+    background: transparent;
+
+    &:before {
+        transform: rotate(45deg);
+        top: 0;
+        transition: top ease .3s, transform ease .3s .3s;
+    }
+
+    &:after {
+        transform: rotate(-45deg);
+        top: 0;
+        transition: top ease .3s, transform ease .3s .3s;
+    }
+}
+
+nav {
+    background: #1B1B1B;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+    height: 85vh;
+    padding-top: 60px;
+    position: fixed;
+    transition: width ease .6s;
+    width: 60px;
+    z-index: 8;
+    top: 75px;
+    overflow: hidden;
+
+    & ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        visibility: hidden;
+        opacity: 0%;
+        transition: opacity 0.5s ease-in-out;
+    }
+
+    & li {
+        cursor: pointer;
+        display: block;
+        line-height: 25px;
+        padding-left: 20px;
+        white-space: nowrap;
+        color: #7a7a7a;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+}
+
+#menu:checked~nav {
+    width: 200px;
+
+    ul {
+        visibility: visible;
+        opacity: 100%;
+    }
+}

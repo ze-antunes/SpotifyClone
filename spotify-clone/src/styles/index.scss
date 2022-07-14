@@ -1,0 +1,13 @@
+@import 'card';
+@import 'footer';
+@import 'menu';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body {
+    background-color: #303030;
+}
