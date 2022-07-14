@@ -1,4 +1,4 @@
-import cover from "../images/LOG_cover.png";
+import cover from "../images/LOG_cover1.png";
 
 const Footer = () => {
     return (

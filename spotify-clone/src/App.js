@@ -22,6 +22,9 @@ function App() {
             <Route path="/playlists">
               <Playlists />
             </Route>
+            <Route path="*">
+              NotFound
+            </Route>
           </Switch>
         </div>
         <BackArrow />

@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Playlists() {
     return (
-        <div>
+        <div className='tab'>
             Playlists
         </div>
     )

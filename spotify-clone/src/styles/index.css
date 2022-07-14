@@ -1,11 +1,15 @@
+@import url("https://css.gg/search.css");
 .card {
   background-color: #2A2A2A;
   color: white;
   padding: 1rem;
   min-width: 130px;
+  transition: background-color 0.5s ease-in-out;
+  cursor: pointer;
 }
 .card-image {
   width: 100%;
+  max-width: 150px;
   -o-object-fit: cover;
      object-fit: cover;
   aspect-ratio: 1/1;
@@ -38,6 +42,9 @@
 }
 .card .imformation-description {
   font-size: 1rem;
+}
+.card:hover {
+  background-color: #000000;
 }
 
 .footer {
@@ -219,6 +226,7 @@ nav li a:hover {
 .display {
   margin: 20px;
   color: white;
+  padding-bottom: 20px;
 }
 .display-grid {
   max-width: 100%;
@@ -236,7 +244,7 @@ nav li a:hover {
   display: none;
 }
 .display-title {
-  padding: 20px 0 20px 0;
+  padding: 0 0 20px 0;
 }
 
 /* width */
@@ -281,6 +289,13 @@ nav li a:hover {
   border: none;
   text-decoration: none;
   padding: 20px;
+  cursor: pointer;
+}
+
+.searchBar-icon {
+  background: none;
+  border: none;
+  padding: 10px;
   cursor: pointer;
 }
 

@@ -3,9 +3,12 @@
     color: white;
     padding: 1rem;
     min-width: 130px;
+    transition: background-color 0.5s ease-in-out;
+    cursor: pointer;
 
     &-image {
         width: 100%;
+        max-width: 150px;
         object-fit: cover;
         aspect-ratio: 1 / 1;
     }
@@ -44,5 +47,9 @@
         &-description {
             font-size: 1rem;
         }
+    }
+
+    &:hover {
+        background-color: #000000;
     }
 }

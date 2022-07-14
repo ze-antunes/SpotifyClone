@@ -1,9 +1,10 @@
 import React from 'react'
+import SearchBar from './SearchBar'
 
 export default function Searchpage() {
     return (
-        <div>
-            Search Page
+        <div className='tab'>
+            <SearchBar />
         </div>
     )
 }
