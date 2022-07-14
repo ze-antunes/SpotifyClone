@@ -1,13 +1,29 @@
 @import 'card';
 @import 'footer';
 @import 'menu';
+@import 'display';
+@import 'scrollbar';
+@import 'backarrow';
 
 * {
     box-sizing: border-box;
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #E4E4E4;
 }
 
 body {
     background-color: #303030;
+}
+
+.tab {
+    position: fixed;
+    right: 0;
+    top: 75px;
+    width: 100vw;
+    height: 82.5vh;
+    padding-left: 60px;
+    margin-bottom: 100px;
+    background-color: #404040;
+    overflow: scroll;
 }

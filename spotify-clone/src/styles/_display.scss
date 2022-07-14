@@ -1,0 +1,25 @@
+.display {
+    margin: 20px;
+    color: white;
+
+    &-grid {
+        max-width: 100%;
+        display: flex;
+        grid-template-columns:
+            repeat(auto-fit, minmax(100px, 1fr));
+        row-gap: 20px;
+        column-gap: 20px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+    &-title {
+        padding: 20px 0 20px 0;
+    }
+}

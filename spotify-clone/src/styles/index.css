@@ -1,23 +1,24 @@
 .card {
-  background-color: white;
-  color: black;
-  padding: 1.5rem;
+  background-color: #2A2A2A;
+  color: white;
+  padding: 1rem;
+  min-width: 130px;
 }
 .card-image {
   width: 100%;
-  height: 20rem;
   -o-object-fit: cover;
      object-fit: cover;
+  aspect-ratio: 1/1;
 }
 .card .imformation-title {
-  font-size: 2rem;
+  font-size: 1.3rem;
 }
 .card .imformation-link {
   display: inline-block;
   margin-block: 2px;
   text-decoration: none;
   position: relative;
-  color: black;
+  color: white;
 }
 .card .imformation-link::after {
   content: "";
@@ -36,7 +37,7 @@
   transform: scaleX(1);
 }
 .card .imformation-description {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 .footer {
@@ -199,7 +200,11 @@ nav li {
   white-space: nowrap;
   color: #7a7a7a;
 }
-nav li:hover {
+nav li a {
+  text-decoration: none;
+  color: #7a7a7a;
+}
+nav li a:hover {
   color: #fff;
 }
 
@@ -211,12 +216,93 @@ nav li:hover {
   opacity: 100%;
 }
 
+.display {
+  margin: 20px;
+  color: white;
+}
+.display-grid {
+  max-width: 100%;
+  display: flex;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.display-grid::-webkit-scrollbar {
+  display: none;
+}
+.display-title {
+  padding: 20px 0 20px 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.backarrow {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 7;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+.backarrow-left {
+  border: solid #E4E4E4;
+  border-width: 0 5px 5px 0;
+  display: inline-block;
+  padding: 9px;
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+.backarrow button {
+  background: none;
+  background-color: none;
+  border: none;
+  text-decoration: none;
+  padding: 20px;
+  cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #E4E4E4;
 }
 
 body {
   background-color: #303030;
+}
+
+.tab {
+  position: fixed;
+  right: 0;
+  top: 75px;
+  width: 100vw;
+  height: 82.5vh;
+  padding-left: 60px;
+  margin-bottom: 100px;
+  background-color: #404040;
+  overflow: scroll;
 }/*# sourceMappingURL=index.css.map */

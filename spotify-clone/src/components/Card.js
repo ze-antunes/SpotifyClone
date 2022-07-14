@@ -10,15 +10,13 @@ function Card() {
           className="card-image"
         />
         <div className="card-information">
-          <h2 className="imformation-title">
+          <h4 className="imformation-title">
             <a className="imformation-link" href="/portfolio">
               Bruh
             </a>
-          </h2>
+          </h4>
           <p className="imformation-description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dicta qui
-            nesciunt eligendi dolorum fugit iusto reiciendis sed perspiciatis
-            maiores veniam!
+            Lamb of god
           </p>
         </div>
       </article>
