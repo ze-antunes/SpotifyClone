@@ -1,8 +1,72 @@
-.searchBar {
-    &-icon {
-        background: none;
-        border: none;
-        padding: 10px;
-        cursor: pointer;
+.bar {
+    height: 40px;
+    width: 100%;
+
+
+    &-search {
+        float: left;
+        text-decoration: none;
+        padding: 10px 10px 10px 0;
+        margin-left: 20px;
+
+        & input {
+            height: 40px;
+            color: black;
+        }
+
+        &-icon {
+            background: none;
+            border: none;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+
+    &-layoutIcons {
+        list-style-type: none;
+        // padding: 10px;
+        margin-right: 20px;
+        float: right;
+
+        &-base {
+            width: 40px;
+            display: flex;
+            justify-content: space-between;
+            height: 40px;
+            flex-direction: column;
+
+            &-row {
+                width: 100%;
+                height: 10px;
+                display: flex;
+                justify-content: space-between;
+
+                 &-element {
+                    width: 10px;
+                    height: 10px;
+                    transform: scale(1) translateZ(0);
+                    background: white;
+                    transition: 0.1s ease transform;
+                    transform-origin: left;
+                    display: block;
+
+                    &:first-child {
+                        transform-origin: left;
+                        transition: none;
+                        transform: scale(1) translateZ(0) !important;
+                    }
+
+                    &:last-child {
+                        transform-origin: right;
+                    }
+                }
+            }
+
+            &:hover {
+                span {
+                    transform: scale(1.7, 1) translateZ(0);
+                }
+            }
+        }
     }
 }

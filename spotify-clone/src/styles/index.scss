@@ -23,8 +23,9 @@ body {
     right: 0;
     top: 75px;
     width: 100vw;
-    height: 82.5vh;
+    height: calc(100% - 155px);
     padding-left: 60px;
+    padding-top: 20px;
     margin-bottom: 100px;
     background-color: #404040;
     overflow: scroll;

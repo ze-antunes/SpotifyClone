@@ -1,27 +1,35 @@
 import React from 'react'
 import Card from './Card'
-import cover1 from "../images/LOG_cover1.png";
-import cover2 from "../images/LOG_cover2.png";
-import cover3 from "../images/LOG_cover3.png";
-import cover4 from "../images/LOG_cover4.png";
 
-export default function Display({title}) {
+import { useEffect, useState } from 'react';
+import { useAPI } from '../hooks/apis/General.ts';
+
+export default function Display({ title, id }) {
+
+    const [elements, setElements] = useState('');
+    const [error, setError] = useState('');
+    const api = useAPI(`/artists/${id}/albums?include_groups=single%2Cappears_on&market=ES&limit=20&offset=5`);
+
+    useEffect(() => {
+        api
+            .getEndpoint()
+            .then((data) => {
+                setElements(data);
+                console.log(data);
+            })
+            .catch(() => {
+                setError(error);
+            });
+    }, []);
+
     return (
         <div className="display">
             <h3 className='display-title'>{title}</h3>
             <div className="display-grid">
-                <Card cover={cover1}/>
-                <Card cover={cover2}/>
-                <Card cover={cover3}/>
-                <Card cover={cover4}/>
-                <Card cover={cover1}/>
-                <Card cover={cover2}/>
-                <Card cover={cover3}/>
-                <Card cover={cover4}/>
-                <Card cover={cover1}/>
-                <Card cover={cover2}/>
-                <Card cover={cover3}/>
-                <Card cover={cover4}/>
+                {elements.items?.map(item => {
+                    // console.log(item)
+                    return <Card key={item.id} cover={item.images[1].url} albumName={item.name} artist={item.artists[0].name} />
+                })}
             </div>
         </div>
     )
