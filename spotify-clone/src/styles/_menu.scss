@@ -30,6 +30,17 @@ input#menu {
     }
 }
 
+.patch {
+    position: fixed;
+    display: block;
+    background: #1B1B1B;
+    height: 50px;
+    width: 60px;
+    top: 75px;
+    z-index: 8;
+    transition: width ease .6s;
+}
+
 
 .menu {
     left: 18px;
@@ -65,12 +76,18 @@ nav {
     box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
     height: 86vh;
     padding-top: 60px;
+    padding-bottom: 100px;
     position: fixed;
     transition: width ease .6s;
     width: 60px;
-    z-index: 8;
+    z-index: 7;
     top: 75px;
-    overflow: hidden;
+    // overflow: hidden;
+    overflow-x: scroll;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
 
     & ul {
         list-style: none;
@@ -110,4 +127,8 @@ nav {
         visibility: visible;
         opacity: 100%;
     }
+}
+
+#menu:checked~.patch {
+    width: 200px;
 }

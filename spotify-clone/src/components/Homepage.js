@@ -25,7 +25,7 @@ export default function Homepage() {
     return (
         <div className='tab'>
             <SearchBar />
-            {/* <Display title="My playlists" items={playlists.items} /> */}
+            <Display title="My playlists" data={playlists.items} />
         </div>
     )
 }

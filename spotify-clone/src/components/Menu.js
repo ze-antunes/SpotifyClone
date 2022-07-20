@@ -7,8 +7,7 @@ import { useAPI } from '../hooks/apis/General.ts';
 export default function Menu() {
 
     const handleLogout = () => {
-        Cookies.remove('spotifyAuthToken', { path: '' });
-        <Redirect to="/" />
+        Cookies.remove('spotifyAuthToken');
         window.location.reload();
     }
 
@@ -29,24 +28,23 @@ export default function Menu() {
     }, []);
 
     return (
-        <div>
+        <div className='sideMenu'>
             <input type="checkbox" id="menu" />
             <label htmlFor="menu" className="icon">
                 <div className="menu"></div>
             </label>
+            <div className='patch'></div>
 
             <nav>
                 <ul>
                     <li><Link to="/">Home</Link></li>
                     <li><Link to="/search">Search</Link></li>
-                    <li><Link to="/playlists">Playlists</Link></li>
                     <li><Link to="/" onClick={handleLogout}>Log out</Link></li>
                 </ul>
                 <br />
 
                 <ul>
                     {playlists.items?.map(playlist => {
-                        // console.log(playlist)
                         return <li key={playlist.id}><Link to={`/playlist/${playlist.id}`}>{playlist.name}</Link></li>
                     })}
                 </ul>
