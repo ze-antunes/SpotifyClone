@@ -3,17 +3,26 @@ import { useParams } from 'react-router-dom';
 import { useAPI } from '../hooks/apis/General.ts';
 
 export default function Playlistpage() {
-
     const [playlistTracks, setPlaylistTracks] = useState('');
+    const [playlistData, setPlaylistData] = useState('');
     const { id } = useParams();
 
-    const api = useAPI(`/playlists/${id}/tracks`);
+    const playlistTracksRequest = useAPI(`/playlists/${id}/tracks`);
+    const playlistDataRequest = useAPI(`/playlists/${id}`);
 
     useEffect(() => {
-        api
+        playlistTracksRequest
             .getEndpoint()
             .then((data) => {
                 setPlaylistTracks(data);
+                // console.log(data);
+            })
+            .catch(() => { });
+
+        playlistDataRequest
+            .getEndpoint()
+            .then((data) => {
+                setPlaylistData(data);
                 // console.log(data);
             })
             .catch(() => { });
@@ -21,7 +30,7 @@ export default function Playlistpage() {
 
     return (
         <div className='tab'>
-            <h1>Playlistpage</h1>
+            <h1>{playlistData.name}</h1>
             <ul>
                 {playlistTracks && playlistTracks.items?.map(item => {
                     return <li key={item.track.id}>

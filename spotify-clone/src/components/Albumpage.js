@@ -4,23 +4,33 @@ import { useAPI } from '../hooks/apis/General.ts';
 
 const Albumpage = () => {
     const [albumTracks, setAlbumTracks] = useState('');
+    const [albumData, setAlbumData] = useState('');
     const { id } = useParams();
 
-    const api = useAPI(`/albums/${id}/tracks`);
+    const albumTracksRequest = useAPI(`/albums/${id}/tracks`);
+    const albumDataRequest = useAPI(`/albums/${id}`);
 
     useEffect(() => {
-        api
+        albumTracksRequest
             .getEndpoint()
             .then((data) => {
                 setAlbumTracks(data);
                 // console.log(data);
             })
             .catch(() => { });
+
+        albumDataRequest
+            .getEndpoint()
+            .then((data) => {
+                setAlbumData(data);
+                console.log(data);
+            })
+            .catch(() => { });
     }, []);
 
     return (
         <div className='tab'>
-            <h1>Albumspage</h1>
+            <h1>{albumData.name}</h1>
             <ul>
                 {albumTracks && albumTracks.items?.map(item => {
                     return <li key={item.id}>

@@ -23,16 +23,14 @@ const Artistpage = () => {
             .getEndpoint()
             .then((data) => {
                 setArtistAlbumsData(data);
-                console.log(data);
+                // console.log(data);
             })
             .catch(() => { });
     }, []);
 
     return (
         <div className='tab'>
-            <h1>Artistpage</h1>
-            <h2>{artistData.name}</h2>
-
+            <h1>{artistData.name}</h1>
             <ul>
                 {artistAlbumsData && artistAlbumsData.items?.map(album => {
                     return <li key={album.id}><a href={`/album/${album.id}`}>{album.name}</a></li>

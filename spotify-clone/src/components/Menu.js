@@ -1,13 +1,13 @@
 import Cookies from 'js-cookie'
 import React from 'react'
-import { Link, Redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useEffect, useState } from 'react';
 import { useAPI } from '../hooks/apis/General.ts';
 
 export default function Menu() {
 
-    const handleLogout = () => {
-        Cookies.remove('spotifyAuthToken');
+    const handleLogout = async () => {
+        await Cookies.remove('spotifyAuthToken');
         window.location.reload();
     }
 
