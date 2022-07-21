@@ -13,6 +13,7 @@ import { SpotifyApiContext } from "react-spotify-api";
 import Cookies from "js-cookie";
 import { SpotifyAuth, Scopes } from "react-spotify-auth";
 import { axios } from "./hooks/Axios.ts";
+import Categorypage from './components/Categorypage';
 
 
 function App() {
@@ -53,6 +54,9 @@ function App() {
                 </Route>
                 <Route path="/album/:id">
                   <Albumpage />
+                </Route>
+                <Route path="/category/:id">
+                  <Categorypage />
                 </Route>
                 <Route path="*">
                   <Homepage />

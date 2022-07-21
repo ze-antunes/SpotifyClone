@@ -8,11 +8,11 @@ export default function Homepage() {
 
     const [playlists, setPlaylists] = useState('');
     const [error, setError] = useState('');
-    const api = useAPI("/me/playlists");
+    const api = useAPI();
 
     useEffect(() => {
         api
-            .getEndpoint()
+            .getMyPlaylists()
             .then((data) => {
                 setPlaylists(data);
                 // console.log(data);
@@ -25,7 +25,7 @@ export default function Homepage() {
     return (
         <div className='tab'>
             <SearchBar />
-            <Display title="My playlists" data={playlists.items} />
+            <Display title="My playlists" data={playlists?.items} />
         </div>
     )
 }

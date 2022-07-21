@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Card({ cover, songName, albumName, artist, idLink, owner }) {
+function Card({ cover, songName, albumName, artist, idLink, categoryLink, owner }) {
   return (
     <div>
       <article className="card">
@@ -12,7 +12,7 @@ function Card({ cover, songName, albumName, artist, idLink, owner }) {
         />
         <div className="card-information">
           <h4 className="imformation-title">
-            <a className="imformation-link" href={`/playlist/${idLink}`}>
+            <a className="imformation-link" href={(idLink && `/playlist/${idLink}`) || (categoryLink && `/category/${categoryLink}`)}>
               {songName}
               {albumName}
             </a>

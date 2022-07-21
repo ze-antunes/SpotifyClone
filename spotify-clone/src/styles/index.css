@@ -61,8 +61,6 @@
 }
 .footer-cover {
   display: flex;
-  width: 50%;
-  max-width: 50%;
   height: 70px;
   display: grid;
   position: absolute;
@@ -103,6 +101,7 @@
   display: flex;
   float: right;
   align-items: flex-start;
+  z-index: 6;
 }
 .footer-progress {
   position: fixed;

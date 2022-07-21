@@ -6,27 +6,25 @@ export default function Playlistpage() {
     const [playlistTracks, setPlaylistTracks] = useState('');
     const [playlistData, setPlaylistData] = useState('');
     const { id } = useParams();
-
-    const playlistTracksRequest = useAPI(`/playlists/${id}/tracks`);
-    const playlistDataRequest = useAPI(`/playlists/${id}`);
+    const api = useAPI();
 
     useEffect(() => {
-        playlistTracksRequest
-            .getEndpoint()
-            .then((data) => {
-                setPlaylistTracks(data);
-                // console.log(data);
-            })
-            .catch(() => { });
-
-        playlistDataRequest
-            .getEndpoint()
+        api
+            .getPlaylist(id)
             .then((data) => {
                 setPlaylistData(data);
                 // console.log(data);
             })
             .catch(() => { });
-    }, []);
+
+        api
+            .getPlaylistTracks(id)
+            .then((data) => {
+                setPlaylistTracks(data);
+                // console.log(data);
+            })
+            .catch(() => { });
+    }, [window.location.pathname]);
 
     return (
         <div className='tab'>
